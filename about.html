@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salt'n Pepper Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Times New Roman', serif;
+      line-height: 1.8;
+    }
+
+    :root {
+            --primary-color: #000000;
+            --text-color: white;
+            --button-bg: #e30613;
+            --button-border: white;
+            --brand-card-width: 250px;
+            --button-padding: 12px 25px;
+        }
+
+        
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            position: sticky;
+            top: 0;
+            z-index: ;
+        }
+
+        .logo img {
+            width: 165px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: var(--button-padding);
+            font-size: 14px;
+            border-radius: 25px;
+            border: 1px solid var(--button-border);
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 150px;
+            text-align: center;
+        }
+
+        .btn.red {
+            background-color: var(--button-bg);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn.red::after {
+            content: '➔';
+            font-size: 14px;
+        }
+
+    .section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .section h1, .section h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: white;
+    }
+
+    .section p {
+      max-width: 900px;
+      margin: 10px auto;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .restaurant-section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .restaurant-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .restaurant-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .restaurant-content .text {
+      margin-bottom: 30px;
+      max-width: 800px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .images img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .salt-title {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 15px;
+    }
+    
+    .franchise-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .franchise-section h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .franchise-section h2 {
+      font-size: 28px;
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .franchise-content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .franchise-content img {
+      width: 550px;
+      border-radius: 10px;
+    }
+
+    .franchise-info {
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .location-heading {
+      font-size: 14px;
+      color: red;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .franchise-info h3 {
+      font-size: 30px;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .franchise-info p {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .franchise-info p span {
+      margin-right: 6px;
+    }
+     .footer {
+      background-color: #0f0f0f;
+      padding: 50px 40px 20px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      max-width: 300px;
+    }
+
+    .footer-logo img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: #ccc;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-links, .footer-contact, .footer-social {
+      min-width: 200px;
+    }
+
+   .footer-column {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .footer-apps img {
+      width: 140px;
+      margin: 10px 0;
+    }
+     .policy-links {
+      margin-top: 10px;
+    }
+
+    .policy-links a {
+      color: #ccc;
+      margin-right: 15px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .policy-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+ <header class="navbar">
+    <div class="logo">
+      <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="logo" />
+    </div>
+    <div class="navbar-right">
+      <nav>
+        <ul>
+          <li><a href="INDEX.HTML">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="publication.html">Publications</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-group">
+        <button class="btn">Get a Franchise</button>
+        <button class="btn red">Order Online</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Introduction -->
+  <section class="section">
+    <h1>Introduction</h1>
+    <p>The Salt’n Pepper is Pakistan’s most recognized and distinguished hospitality brand with a history of market innovation and excellence in restaurants chain operation. The Salt’n Pepper Restaurants are regarded and respected as the number one restaurant entity in Pakistan.</p>
+    <p>The Salt’n Pepper Restaurants are an example of gracious dining, outstanding service, extraordinary classic and contemporary cuisine. The restaurants have become the ultimate dining destinations in Lahore. From family occasions to business dinners and moments of the heart, it is a place where unforgettable memories are made.</p>
+    <p>The first Salt’n Pepper Restaurant on the Lahore Mall Road was established in 1983 by hotelier/restaurant entrepreneur Mahmood Akbar, considered by many as the pioneer hotelier and restaurateur in Pakistan.</p>
+    <p>Foodconsults (Pvt.) Limited the owing company of Salt’n Pepper Restaurants, which has its Headquarter in Lahore, prides itself on developing Pakistan’s first national chain of restaurants. For over 3 decades, the group’s focus has been to provide their guests with an exceptional dining experience. The group’s profile includes expertise in Pakistani and Continental cuisine, along with Fast Food.</p>
+  </section>
+
+  <!-- Restaurant Section -->
+  <section class="restaurant-section">
+    <h2>Restaurant</h2>
+    <p>M/S. Foodconsults (Pvt.) Limited operates several different Salt’n Pepper Restaurants in Lahore. Each offering a unique dining experience. The group’s chronology of success is as follows:-</p>
+
+    <div class="restaurant-content">
+      <div class="salt-title">Salt’n Pepper Restaurant</div>
+      <p class="text">
+        The Salt’n Pepper Restaurants at Mall and Liberty Market Lahore, are considered to be the first proper family style restaurants in the food industry of Pakistan. These restaurants pride themselves for being symbolized as an eatery with a customer loyalty spanning over three generations. As a restaurant model, these have inspired the set-up of numerous other restaurants across Pakistan.
+      </p>
+      <div class="images">
+        <img src="https://images-beta.tossdown.com/site/49597e50-0648-4397-bf3c-b8569d5cd8c0.webp" alt="Restaurant Image 1">
+        <img src="https://images-beta.tossdown.com/site/63fd2f60-92e8-4f52-a0b7-4da1e2ebe04d.webp" alt="Restaurant Image 2">
+      </div>
+    </div>
+  </section>
+  
+  <section class="franchise-section">
+    <h1>Salt’n Pepper</h1>
+    <h2>Village Franchise</h2>
+
+    <div class="franchise-content">
+      <img src="https://images-beta.tossdown.com/site/0df39a08-2dca-4998-adda-4ca66b1132cb.webp" alt="Salt’n Pepper Village Gujranwala" />
+
+      <div class="franchise-info">
+        <div class="location-heading">GUJRANWALA</div>
+        <h3><strong>Salt’n Pepper</strong> Village</h3>
+        <p><span>📍</span>Adjacent to Rida Marquees / DHA Main Gate, GT Road Gujranwala Cantt</p>
+        <p><span>📞</span>Ph: 055-3884500 | 055-3880400</p>
+      </div>
+    </div>
+  </section>
+ <footer>
+    <div class="footer">
+      <!-- Logo and Intro -->
+      <div class="footer-logo">
+        <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="Salt'n Pepper Logo">
+        <p>
+          The Salt’n Pepper Restaurants are an example of gracious dinning, outstanding service, extraordinary classic and contemporary cuisine. The restaurants have become the ultimate dinning destinations in Lahore. From family occasions to business dinner and moments of the heart, this place is where unforgettable memories are made.
+        </p>
+        <div class="policy-links">
+          <a href="#">Terms & conditions</a>
+          <a href="#">Privacy policy</a>
+        </div>
+      </div>
+
+      <!-- Site Links -->
+      <div class="footer-links">
+        <h4>Site Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Publications</li>
+          <li>Get a Franchise</li>
+          <li>Feedback</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><span>Head office Address</span><br>Foodconsults (Pvt) Ltd<br>23-Usman Block, New GardenTown, Lahore, Pakistan</li>
+          <li><span>Head office number</span><br>+92 42 358 509 31<br>+92 42 358 509 30</li>
+          <li><span>Email Address</span><br>snpfood@brain.net.pk</li>
+          <li><span>Free delivery number</span><br>+92 42 111 100 678<br>+92 03 111 444 610</li>
+        </ul>
+      </div>
+
+      <!-- Social and Apps -->
+      
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+        </div>
+        <div class="footer-apps">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play" />
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bottom -->
+   <div class="footer-bottom">
+      <span>© 2025 Snp Main</span>
+      <span>Powered by tossdown.com</span>
+    </div>
+  </footer>
+</body>
+</html>

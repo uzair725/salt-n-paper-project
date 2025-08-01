@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publications - Salt'n Pepper</title>
+  <style>:root {
+            --primary-color: #000000;
+            --text-color: white;
+            --button-bg: #e30613;
+            --button-border: white;
+            --brand-card-width: 250px;
+            --button-padding: 12px 25px;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            position: sticky;
+            top: 0;
+            z-index: ;
+        }
+
+        .logo img {
+            width: 165px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: var(--button-padding);
+            font-size: 14px;
+            border-radius: 25px;
+            border: 1px solid var(--button-border);
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 150px;
+            text-align: center;
+        }
+
+        .btn.red {
+            background-color: var(--button-bg);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn.red::after {
+            content: '➔';
+            font-size: 14px;
+        }</style>
+</head>
+<body>
+   <header class="navbar">
+    <div class="logo">
+      <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="logo" />
+    </div>
+  <div class="navbar-right">
+      <nav>
+        <ul>
+          <li><a href="INDEX.HTML">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="publication.html">Publications</a></li>
+        </ul>
+      </nav>
+
+      <div class="btn-group">
+        <button class="btn">Get a Franchise</button>
+        <button class="btn red">Order Online</button>
+      </div>
+    </div>
+ 
+</body>
+</html>
