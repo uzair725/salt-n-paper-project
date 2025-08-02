@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Publications - Salt'n Pepper</title>
-  <style>:root {
+    <meta charset="UTF-8">
+    <title>Publications - Salt'n Pepper</title>
+    <style>
+        :root {
             --primary-color: #000000;
             --text-color: white;
             --button-bg: #e30613;
             --button-border: white;
             --brand-card-width: 250px;
             --button-padding: 12px 25px;
-        }
-
-        body {
-            background-color: var(--primary-color);
-            color: var(--text-color);
         }
 
         /* Navbar */
@@ -27,7 +24,8 @@
             color: var(--text-color);
             position: sticky;
             top: 0;
-            z-index: ;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .logo img {
@@ -84,27 +82,461 @@
         .btn.red::after {
             content: '➔';
             font-size: 14px;
-        }</style>
-</head>
-<body>
-   <header class="navbar">
-    <div class="logo">
-      <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="logo" />
-    </div>
-  <div class="navbar-right">
-      <nav>
-        <ul>
-          <li><a href="INDEX.HTML">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="publication.html">Publications</a></li>
-        </ul>
-      </nav>
+        }
 
-      <div class="btn-group">
-        <button class="btn">Get a Franchise</button>
-        <button class="btn red">Order Online</button>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Book section (Flexbox to align books in a row) */
+        .books {
+            display: flex;
+            justify-content: space-between; /* Space between books */
+            gap: 30px; /* Add space between books */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Individual book styling */
+        .book {
+            text-align: center;
+            width: 45%; /* Ensures each book takes 45% width of the container */
+            padding: 10px; /* Padding inside the book container */
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 30px; /* Adjust the space between books */
+            border: 3px solid #525252; /* Border around each book container */
+            position: relative;
+        }
+
+        /* Image inside book container */
+        .book img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect for the book image */
+        .book:hover img {
+            transform: scale(1.05); /* Scaling effect for the image inside the book */
+        }
+
+        /* Branch list styles */
+        .branch-list {
+            margin-top: 30px;
+            font-family:;
+            font-size: 15px; /* Larger text size */
+            line-height: 1.5;
+            letter-spacing: 0.5px; /* Spacing between letters */
+            color: white;
+            text-align: center; /* Center-align the text */
+        }
+
+        .branch-list p {
+            margin: 10px 0; /* Adds margin between lines */
+        }
+
+        .branch-list p:first-of-type {
+            font-size: 18px; /* Larger font size for the first line */
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        a {
+            color: #00b0b0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Publications - Salt'n Pepper</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --text-color: white;
+            --button-bg: #e30613;
+            --button-border: white;
+            --brand-card-width: 250px;
+            --button-padding: 12px 25px;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo img {
+            width: 165px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: var(--button-padding);
+            font-size: 14px;
+            border-radius: 25px;
+            border: 1px solid var(--button-border);
+            cursor: pointer;
+            background-color: transparent;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            width: 150px;
+            text-align: center;
+        }
+
+        .btn.red {
+            background-color: var(--button-bg);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn.red::after {
+            content: '➔';
+            font-size: 14px;
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Book section (Flexbox to align books in a row) */
+        .books {
+            display: flex;
+            justify-content: space-between; /* Space between books */
+            gap: 30px; /* Add space between books */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Individual book styling */
+        .book {
+            text-align: center;
+            width: 45%; /* Ensures each book takes 45% width of the container */
+            padding: 10px; /* Padding inside the book container */
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 30px; /* Adjust the space between books */
+            border: 3px solid #525252; /* Border around each book container */
+            position: relative;
+        }
+
+        /* Image inside book container */
+        .book img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect for the book image */
+        .book:hover img {
+            transform: scale(1.05); /* Scaling effect for the image inside the book */
+        }
+
+        /* Branch list styles */
+        .branch-list {
+            margin-top: 30px;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px; /* Larger text size */
+            line-height: 1.5;
+            letter-spacing: 0.5px; /* Spacing between letters */
+            color: white;
+            text-align: center; /* Center-align the text */
+        }
+
+        .branch-list p {
+            margin: 10px 0; /* Adds margin between lines */
+        }
+
+        .branch-list p:first-of-type {
+            font-size: 22px; /* Larger font size for the first line */
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        a {
+            color: #00b0b0;
+            text-decoration: none;
+        }
+        .footer {
+      background-color: #0f0f0f;
+      padding: 50px 40px 20px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      max-width: 300px;
+    }
+
+    .footer-logo img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo p {
+      color: #ccc;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .footer-links, .footer-contact, .footer-social {
+      min-width: 200px;
+    }
+
+   .footer-column {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-column h4 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .footer-social img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .footer-apps img {
+      width: 140px;
+      margin: 10px 0;
+    }
+     .policy-links {
+      margin-top: 10px;
+    }
+
+    .policy-links a {
+      color: #ccc;
+      margin-right: 15px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .policy-links a:hover {
+      text-decoration: underline;
+    }
+        
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="logo" />
+        </div>
+
+        <div class="navbar-right">
+            <nav>
+                <ul>
+                    <li><a href="INDEX.HTML">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="publication.html">Publications</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-group">
+                <button class="btn">Get a Franchise</button>
+                <button class="btn red">Order Online</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="books">
+            <div class="book">
+                <img src="https://images-beta.tossdown.com/site/22fa9f8e-64ff-4eb4-ac4c-19a378cf20af.webp" alt="Safi Pepper Book">
+                <p><a href="https://images-beta.tossdown.com/site/22fa9f8e-64ff-4eb4-ac4c-19a378cf20af.webp"></a></p>
+            </div>
+            <div class="book">
+                <img src="https://images-beta.tossdown.com/site/216c6184-1ad5-43bd-88c3-62c42dea8486.webp" alt="Curry Book">
+                <p><a href="https://images-beta.tossdown.com/site/216c6184-1ad5-43bd-88c3-62c42dea8486.webp"></a></p>
+            </div>
+        </div>
+
+        <div class="branch-list">
+            <p>Available at following branches:</p>
+            <p>Safi Pepper Restaurant - Mall Road</p>
+            <p>26, Mall Road, Lahore, Pakistan</p>
+            <p>Phone: 0423724409</p>
+
+            <p>Safi Pepper Restaurant - Liberty Market</p>
+            <p>48 - Commercial Zone, Liberty Market, Lahore, Pakistan</p>
+            <p>Phone: 0423752789</p>
+
+            <p>Safi Pepper Village - Lahore</p>
+            <p>103-B II, MM Alam Road, Lahore, Pakistan</p>
+            <p>Phone: 04237550735</p>
+
+            <p>Safi Pepper - Islamabad</p>
+            <p>Plot# 55, Shabbir Plaza, Blue Area, F-6, Islamabad</p>
+            <p>Phone: 0512604904-6</p>
+
+            <p>Safi Pepper - Faisalabad</p>
+            <p>14-Kohinoor City, Faisalabad</p>
+            <p>Phone: 0418711404</p>
+        </div>
+        <footer>
+    <div class="footer">
+      <!-- Logo and Intro -->
+      <div class="footer-logo">
+        <img src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp" alt="Salt'n Pepper Logo">
+        <p>
+          The Salt’n Pepper Restaurants are an example of gracious dinning, outstanding service, extraordinary classic and contemporary cuisine. The restaurants have become the ultimate dinning destinations in Lahore. From family occasions to business dinner and moments of the heart, this place is where unforgettable memories are made.
+        </p>
+        <div class="policy-links">
+          <a href="#">Terms & conditions</a>
+          <a href="#">Privacy policy</a>
+        </div>
+      </div>
+
+      <!-- Site Links -->
+      <div class="footer-links">
+        <h4>Site Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Publications</li>
+          <li>Get a Franchise</li>
+          <li>Feedback</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><span>Head office Address</span><br>Foodconsults (Pvt) Ltd<br>23-Usman Block, New GardenTown, Lahore, Pakistan</li>
+          <li><span>Head office number</span><br>+92 42 358 509 31<br>+92 42 358 509 30</li>
+          <li><span>Email Address</span><br>snpfood@brain.net.pk</li>
+          <li><span>Free delivery number</span><br>+92 42 111 100 678<br>+92 03 111 444 610</li>
+        </ul>
+      </div>
+
+      <!-- Social and Apps -->
+      
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="footer-social">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+        </div>
+        <div class="footer-apps">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="Google Play" />
+        </div>
       </div>
     </div>
- 
+
+
+    <!-- Bottom -->
+   <div class="footer-bottom">
+      <span>© 2025 Snp Main</span>
+      <span>Powered by tossdown.com</span>
+    </div>
+  </footer>
+
+
+
+
+
 </body>
+
 </html>
